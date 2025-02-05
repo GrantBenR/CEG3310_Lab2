@@ -1,28 +1,15 @@
+; a. The x and y variables should exist in memory after loading your program (use .FILL)
+
+; b. Assume (6 >= x >= 0) and (6 >= y >= 0)
+
+; c. Store the result of your exponential operation into the memory address x8000 and HALT your program
+
 START
 
 LD R0, VAR_X
 LD R1, VAR_Y
 
 ST R0, RESULT_ADDR
-
-; ; Two's complement
-; ; r1 = -r1
-; NOT R1, R1
-; ADD R1, R1, #1
-
-; ADD R0, R0, R1
-
-; BRz IF_ZERO
-; BRnzp ELSE
-
-; IF_ZERO
-; LD R3, FIVE
-; BRnzp END_IF
-
-; ELSE
-; ; TODO
-
-; END_IF
 
 HALT
 
