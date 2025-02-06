@@ -7,10 +7,22 @@
 ; d. Store the result (R3) of your if-else statement into the memory address x8002 and HALT your program
 START
 
+LD R0, VAR_0
+LD R1, VAR_1
+NOT R1, R1
+ADD R1, R1, 1
+ADD R0, R0, R1
+BRnz NOT_EQUAL
+IS_EQUAL
+NOT_EQUAL
+LD R3, #-5
+IS_EQUAL
+LD R3, #5
 
-
+STI R3, DEST_ADDRESS
 HALT
 
-
-
+VAR_0 .FILL #1
+VAR_1 .FILL #1
+DEST_ADDRESS .FILL x8002
 .END
