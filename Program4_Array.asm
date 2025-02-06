@@ -11,3 +11,12 @@
 ; f. Once the loop has finished, HALT your program
 
 ; g. You can assume the user will always enter a single digit number 0 to 9
+START
+
+
+
+HALT
+
+
+
+.END
