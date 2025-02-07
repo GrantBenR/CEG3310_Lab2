@@ -5,6 +5,8 @@
 ; c. The values used for R0 and R1 should exist in memory after loading your program (use .FILL)
 
 ; d. Store the result (R3) of your if-else statement into the memory address x8002 and HALT your program
+.ORIG x3000
+
 START
 
 LD R0, VAR_0

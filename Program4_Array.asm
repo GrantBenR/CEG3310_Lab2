@@ -11,12 +11,17 @@
 ; f. Once the loop has finished, HALT your program
 
 ; g. You can assume the user will always enter a single digit number 0 to 9
+.ORIG x3000
+
 START
 
 
 
 HALT
 
-
+VAR_ARRAY_SIZE .FILL #5
+VAR_ARRAY_ADDRESS_START .FILL #8002
+VAR_LOOP_MAX .FILL #0
+VAR_LOOP_COUNT .FILL #0
 
 .END
