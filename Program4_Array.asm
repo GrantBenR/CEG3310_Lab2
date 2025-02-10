@@ -1,5 +1,5 @@
 ; a. Initialize a blank array of size n, where 5 <= n <= 20
-
+; n = VAR_ARRAY_SIZE
 ; b. Create a loop that loops a total of n times, during each loop display a prompt asking the user to input a number
 
 ; c. Capture the user’s input (using GETC) and subtract x0030 from the ASCII character the user entered
@@ -50,7 +50,7 @@ END_LOOP
 
 HALT
 
-VAR_ARRAY_SIZE .FILL #5
+VAR_ARRAY_SIZE .FILL #5 ; Equivalent to 'n' in the program instructions
 VAR_ARRAY_ADDRESS_START .FILL x8000
 VAR_LOOP_COUNT .FILL #0
 NEG_ASCII .FILL #-48

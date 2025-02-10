@@ -4,7 +4,7 @@ public class test
     {
         Integer z = 0;
         Integer x = 2;
-        Integer y = 4;
+        Integer y = 2;
         for (int i = 0; i<y; i++)
         {
             for (int j = 0; j<x; j++)
