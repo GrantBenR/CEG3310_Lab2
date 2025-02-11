@@ -6,11 +6,13 @@
 ; c. Store the result of your exponential operation into the memory address x8000 and HALT your program
 .ORIG x3000
 
-;Zero R0 and store in VAR_I
+;Zero R0 and store in VAR_EXPCOUNTER
 AND R0, R0, #0
 ST R0, VAR_EXPCOUNTER
-LD R0, VAR_X
-ST R0, VAR_K
+
+;Set Var Z to 1 at the start
+ADD R0, R0, #1
+ST R0, VAR_Z
 
 START_EXPLOOP
 
@@ -37,7 +39,7 @@ BRzp END_MULTLOOP
 
 
 LD R0, VAR_Z
-LD R1, VAR_K
+LD R1, VAR_Z
 ADD R0, R0, R1
 ST R0, VAR_Z
 LD R1, ASCII_CHARACTER
@@ -59,10 +61,6 @@ LD R0, VAR_EXPCOUNTER
 ADD R0, R0, #1
 ST R0, VAR_EXPCOUNTER
 
-LD R0, VAR_Z
-ST R0, VAR_K
-
-
 BRnzp START_EXPLOOP
 END_EXPLOOP
 
@@ -77,7 +75,6 @@ VAR_MULTCOUNTER .FILL #1
 VAR_X .FILL #2
 VAR_Y .FILL #2
 VAR_Z .FILL #0
-VAR_K .FILL #0
 OUTPUT_LOCATION .FILL x8000
 ASCII_CHARACTER .FILL #48
 ASCII_NEWLINE .FILL #10
